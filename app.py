@@ -194,8 +194,8 @@ if ss:
                                         #st.write(visual['config'])
 
                                         try:
-                                            font_family_value = config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']
-                                            st.write("Font Family:", font_family_value)
+                                            font_family_value = config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']="'Segoe UI'"
+                                            st.write(font_family_value)
                                         except:
                                             st.write('huh')
                                         # try:
