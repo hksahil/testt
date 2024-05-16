@@ -90,6 +90,16 @@ logo={
                     "tabOrder": 1100001
                 }
 
+source_text={
+                    "x": 122.39043824701194,
+                    "y": 656.5737051792828,
+                    "z": 12001,
+                    "width": 140.23904382470118,
+                    "height": 36.972111553784856,
+                    "config": "{\"name\":\"a7ec1ed60550297610b7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":122.39043824701194,\"y\":656.5737051792828,\"z\":12001,\"width\":140.23904382470118,\"height\":36.972111553784856,\"tabOrder\":12001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"POS Data \",\"textStyle\":{\"fontSize\":\"14pt\"}}]}]}}]}}}",
+                    "filters": "[]",
+                    "tabOrder": 12001
+                }
 
 if ss:
     #st.info('Select one of the option')
@@ -128,6 +138,7 @@ if ss:
                                 section['visualContainers'].append(footer_box)
                                 section['visualContainers'].append(ibutton)
                                 section['visualContainers'].append(logo)
+                                section['visualContainers'].append(source_text)
                                 if section['ordinal'] == 0:  # Checking if it's the first page
                                     for visual in section['visualContainers']:
                                          # Load the config dictionary from the JSON string
@@ -137,13 +148,13 @@ if ss:
                                             config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']="'Segoe UI'"
                                             config['singleVisual']['vcObjects']['title'][0]['properties']['fontSize']['expr']['Literal']['Value']=16
                                             visual['config']=json.dumps(config)
-                                            st.write(visual['config'])
+                                            #st.write(visual['config'])
                                         except:
-                                                st.write('huh')
+                                                print('tested')
 
                                         # Application 2 - Changing position of line chart
                                         if config['singleVisual']['visualType'] == 'lineChart':
-                                            st.write('found line chart in page 1')
+                                            #st.write('found line chart in page 1')
                                         
                                             # Update main dictionary values
                                             visual['x'] = 886
@@ -152,18 +163,18 @@ if ss:
                                             visual['height'] = 363
                                             for layout in config['layouts']:
                                                 # Update the values in the config dictionary
-                                                st.write('inside config dict')
+                                                #st.write('inside config dict')
                                                 layout['position']['x'] = 886
                                                 layout['position']['y'] = 255
                                                 layout['position']['width'] = 373
                                                 layout['position']['height'] = 363
-                                                st.write(layout['position']['x'],layout['position']['y'])
+                                                #st.write(layout['position']['x'],layout['position']['y'])
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
                                         
                                         # Pie chart
                                         if config['singleVisual']['visualType'] == 'pieChart':
-                                            st.write('found pie chart in page 1')
+                                            #st.write('found pie chart in page 1')
                                         
                                             # Update main dictionary values
                                             visual['x'] = 464
@@ -172,18 +183,18 @@ if ss:
                                             visual['height'] = 363
                                             for layout in config['layouts']:
                                                 # Update the values in the config dictionary
-                                                st.write('inside config dict')
+                                                #st.write('inside config dict')
                                                 layout['position']['x'] = 464
                                                 layout['position']['y'] = 255
                                                 layout['position']['width'] = 377
                                                 layout['position']['height'] = 363
-                                                st.write(layout['position']['x'],layout['position']['y'])
+                                                #st.write(layout['position']['x'],layout['position']['y'])
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
 
                                         # Bar chart
                                         if config['singleVisual']['visualType'] == 'barChart':
-                                            st.write('found bar chart in page 1')
+                                            #st.write('found bar chart in page 1')
                                         
                                             # Update main dictionary values
                                             visual['x'] = 19
@@ -192,12 +203,12 @@ if ss:
                                             visual['height'] = 362
                                             for layout in config['layouts']:
                                                 # Update the values in the config dictionary
-                                                st.write('inside config dict')
+                                                #st.write('inside config dict')
                                                 layout['position']['x'] = 19
                                                 layout['position']['y'] = 255
                                                 layout['position']['width'] = 407
                                                 layout['position']['height'] = 362
-                                                st.write(layout['position']['x'],layout['position']['y'])
+                                                #st.write(layout['position']['x'],layout['position']['y'])
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
 
@@ -218,13 +229,13 @@ if ss:
                                     for visual in section['visualContainers']:
                                         config = json.loads(visual['config'])
                                         try:
-                                            st.write('inside second page')
+                                            #st.write('inside second page')
                                             config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']="'Segoe UI'"
                                             config['singleVisual']['vcObjects']['title'][0]['properties']['fontSize']['expr']['Literal']['Value']=16
                                             visual['config']=json.dumps(config)
-                                            st.write(visual['config'])
+                                            #st.write(visual['config'])
                                         except:
-                                            st.write('huh')
+                                            print('tested')
                             # New Layout file
                             with open('app-generated.json', 'w') as f:
                                 json.dump(data, f)
