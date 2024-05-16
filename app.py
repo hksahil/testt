@@ -140,12 +140,13 @@ if ss:
                                             visual['y'] = 255
                                             visual['width'] = 373
                                             visual['height'] = 363
-        
-                                            # Update the values in the config dictionary
-                                            config['layouts'][0]['position']['x'] = 886
-                                            config['layouts'][0]['position']['y'] = 255
-                                            config['layouts'][0]['position']['width'] = 373
-                                            config['layouts'][0]['position']['height'] = 363
+                                            for layout in config['layouts']:
+                                                # Update the values in the config dictionary
+                                                st.write('inside config dict')
+                                                layout['position']['x'] = 886
+                                                layout['position']['y'] = 255
+                                                layout['position']['width'] = 373
+                                                layout['position']['height'] = 363
 
                                     
                             # New Layout file
