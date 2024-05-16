@@ -148,7 +148,8 @@ if ss:
                                                 layout['position']['width'] = 373
                                                 layout['position']['height'] = 363
                                                 st.write(layout['position']['x'],layout['position']['y'])
-
+                                        visual['config']=json.dumps(config)
+                                        st.write(visual['config'])
                                     
                             # New Layout file
                             with open('app-generated.json', 'w') as f:
