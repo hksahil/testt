@@ -133,15 +133,15 @@ if ss:
                                          # Load the config dictionary from the JSON string
                                         config = json.loads(visual['config'])
 
-                                        # Application 1 - Change font format if its different
-                                        if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
-                                            st.write('Diff font found')
-                                            # Change the font family to "Arial"
-                                            config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'] = "'Segoe UI'"
-                                            # Update the config in the visual container
-                                            st.write(config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
-                                            visual['config'] = json.dumps(config)
-                                            st.write(visual['config'])
+                                        # # Application 1 - Change font format if its different
+                                        # if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
+                                        #     st.write('Diff font found')
+                                        #     # Change the font family to "Arial"
+                                        #     config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'] = "'Segoe UI'"
+                                        #     # Update the config in the visual container
+                                        #     st.write(config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
+                                        #     visual['config'] = json.dumps(config)
+                                        #     st.write(visual['config'])
 
                                         # Application 2 - Changing position of line chart
                                         if config['singleVisual']['visualType'] == 'lineChart':
