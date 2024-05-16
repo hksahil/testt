@@ -173,20 +173,20 @@ if ss:
 
                                         # Bar chart
                                         if config['singleVisual']['visualType'] == 'barChart':
-                                            st.write('found pie chart in page 1')
+                                            st.write('found bar chart in page 1')
                                         
                                             # Update main dictionary values
-                                            visual['x'] = 464
+                                            visual['x'] = 19
                                             visual['y'] = 255
-                                            visual['width'] = 377
-                                            visual['height'] = 363
+                                            visual['width'] = 407
+                                            visual['height'] = 362
                                             for layout in config['layouts']:
                                                 # Update the values in the config dictionary
                                                 st.write('inside config dict')
-                                                layout['position']['x'] = 464
+                                                layout['position']['x'] = 19
                                                 layout['position']['y'] = 255
-                                                layout['position']['width'] = 377
-                                                layout['position']['height'] = 363
+                                                layout['position']['width'] = 407
+                                                layout['position']['height'] = 362
                                                 st.write(layout['position']['x'],layout['position']['y'])
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
