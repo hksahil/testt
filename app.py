@@ -193,8 +193,10 @@ if ss:
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
 
-                                        st.write(config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
-
+                                        try:
+                                            st.write(config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
+                                        except:
+                                            st.write('huh')
                                         # if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
                                         #     st.write('hi')
                                         #     visual['config']=json.dumps(config)
