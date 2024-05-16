@@ -193,9 +193,11 @@ if ss:
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
 
-                                        if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
-                                            st.write('hi')
-                                            visual['config']=json.dumps(config)
+                                        st.write(config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
+
+                                        # if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
+                                        #     st.write('hi')
+                                        #     visual['config']=json.dumps(config)
                                         #     st.write('Diff font found')
                                         #     st.write(config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
                                         #     # Update the config in the visual container
