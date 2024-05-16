@@ -132,6 +132,15 @@ if ss:
                                     for visual in section['visualContainers']:
                                          # Load the config dictionary from the JSON string
                                         config = json.loads(visual['config'])
+
+                                        # Application 1 - Change font format if its different
+                                        if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
+                                            # Change the font family to "Arial"
+                                            config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'] = "'Segoe UI'"
+                                            # Update the config in the visual container
+                                            visual['config'] = json.dumps(config)
+
+                                        # Application 2 - Changing position of line chart
                                         if config['singleVisual']['visualType'] == 'lineChart':
                                             st.write('found line chart in page 1')
                                         
