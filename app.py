@@ -195,6 +195,7 @@ if ss:
 
                                         try:
                                             config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']="'Segoe UI'"
+                                            config['singleVisual']['vcObjects']['title'][0]['properties']['fontSize']['expr']['Literal']['Value']=16
                                             visual['config']=json.dumps(config)
                                             st.write(visual['config'])
                                         except:
