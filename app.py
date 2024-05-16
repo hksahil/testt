@@ -147,6 +147,7 @@ if ss:
                                                 layout['position']['y'] = 255
                                                 layout['position']['width'] = 373
                                                 layout['position']['height'] = 363
+                                                st.write(layout['position']['x'],layout['position']['y'])
 
                                     
                             # New Layout file
