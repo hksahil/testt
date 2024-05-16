@@ -133,6 +133,7 @@ if ss:
                                          # Load the config dictionary from the JSON string
                                         config = json.loads(visual['config'])
                                         if config['singleVisual']['visualType'] == 'lineChart':
+                                            st.write('found line chart in page 1')
                                         
                                             # Update main dictionary values
                                             visual['x'] = 886
