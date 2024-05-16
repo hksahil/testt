@@ -203,6 +203,14 @@ if ss:
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
 
+                                        if 'fontFamily' in config['singleVisual']['objects']['general'][0]['properties']:
+                                            st.write('Diff font found')
+                                            st.write(config['singleVisual']['objects']['general'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
+                                        #     # Update the config in the visual container
+                                        #     visual['config'] = json.dumps(config)
+                                        #     st.write(visual['config'])
+
+
                             # New Layout file
                             with open('app-generated.json', 'w') as f:
                                 json.dump(data, f)
