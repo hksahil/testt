@@ -133,6 +133,14 @@ if ss:
                                          # Load the config dictionary from the JSON string
                                         config = json.loads(visual['config'])
 
+                                        try:
+                                            config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']="'Segoe UI'"
+                                            config['singleVisual']['vcObjects']['title'][0]['properties']['fontSize']['expr']['Literal']['Value']=16
+                                            visual['config']=json.dumps(config)
+                                            st.write(visual['config'])
+                                        except:
+                                                st.write('huh')
+
                                         # Application 2 - Changing position of line chart
                                         if config['singleVisual']['visualType'] == 'lineChart':
                                             st.write('found line chart in page 1')
@@ -193,13 +201,6 @@ if ss:
                                         visual['config']=json.dumps(config)
                                         #st.write(visual['config'])
 
-                                        try:
-                                            config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value']="'Segoe UI'"
-                                            config['singleVisual']['vcObjects']['title'][0]['properties']['fontSize']['expr']['Literal']['Value']=16
-                                            visual['config']=json.dumps(config)
-                                            st.write(visual['config'])
-                                        except:
-                                            st.write('huh')
                                         # try:
                                         #     st.write(config['singleVisual']['vcObjects']['title'][0]['properties']['fontFamily']['expr']['Literal']['Value'])
                                         # except:
