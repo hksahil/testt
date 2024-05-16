@@ -149,7 +149,27 @@ if ss:
                                                 layout['position']['height'] = 363
                                                 st.write(layout['position']['x'],layout['position']['y'])
                                         visual['config']=json.dumps(config)
-                                        st.write(visual['config'])
+                                        #st.write(visual['config'])
+                                        
+                                        # Pie chart
+                                        if config['singleVisual']['visualType'] == 'pieChart':
+                                            st.write('found pie chart in page 1')
+                                        
+                                            # Update main dictionary values
+                                            visual['x'] = 464
+                                            visual['y'] = 255
+                                            visual['width'] = 377
+                                            visual['height'] = 363
+                                            for layout in config['layouts']:
+                                                # Update the values in the config dictionary
+                                                st.write('inside config dict')
+                                                layout['position']['x'] = 464
+                                                layout['position']['y'] = 255
+                                                layout['position']['width'] = 377
+                                                layout['position']['height'] = 363
+                                                st.write(layout['position']['x'],layout['position']['y'])
+                                        visual['config']=json.dumps(config)
+                                        #st.write(visual['config'])
                                     
                             # New Layout file
                             with open('app-generated.json', 'w') as f:
