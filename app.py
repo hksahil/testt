@@ -113,6 +113,17 @@ bar={
                     "dataTransforms": "{\"projectionOrdering\":{\"Category\":[0],\"Y\":[1]},\"projectionActiveItems\":{\"Category\":[{\"queryRef\":\"Orders.Category\",\"suppressConcat\":false}]},\"queryMetadata\":{\"Select\":[{\"Restatement\":\"Category\",\"Name\":\"Orders.Category\",\"Type\":2048},{\"Restatement\":\"Sales\",\"Name\":\"Sum(Orders.Sales)\",\"Type\":1}]},\"visualElements\":[{\"DataRoles\":[{\"Name\":\"Category\",\"Projection\":0,\"isActive\":true},{\"Name\":\"Y\",\"Projection\":1,\"isActive\":false}]}],\"selects\":[{\"displayName\":\"Category\",\"queryName\":\"Orders.Category\",\"roles\":{\"Category\":true},\"type\":{\"category\":null,\"underlyingType\":1},\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Orders\"}},\"Property\":\"Category\"}}},{\"displayName\":\"Sales\",\"queryName\":\"Sum(Orders.Sales)\",\"roles\":{\"Y\":true},\"sort\":2,\"sortOrder\":0,\"type\":{\"category\":null,\"underlyingType\":259},\"expr\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Orders\"}},\"Property\":\"Sales\"}},\"Function\":0}}}]}"
                 }
 
+simage={
+                    "x": 21.673306772908365,
+                    "y": 11.47410358565737,
+                    "z": 12001,
+                    "width": 87.96812749003983,
+                    "height": 39.52191235059761,
+                    "config": "{\"name\":\"c5ae214798ed22d3d4e3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":21.673306772908365,\"y\":11.47410358565737,\"z\":12001,\"width\":87.96812749003983,\"height\":39.52191235059761,\"tabOrder\":12001}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"sigmoid.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+                    "filters": "[]",
+                    "tabOrder": 12001
+                }
+
 if ss:
     #st.info('Select one of the option')
     #radio=st.radio(' ', ['Add new Header','Update exisiting Header'])
@@ -151,6 +162,7 @@ if ss:
                                 section['visualContainers'].append(ibutton)
                                 section['visualContainers'].append(logo)
                                 section['visualContainers'].append(source_text)
+                                section['visualContainers'].append(simage)
                                 if section['ordinal'] == 0:  # Checking if it's the first page
                                     for visual in section['visualContainers']:
                                          # Load the config dictionary from the JSON string
